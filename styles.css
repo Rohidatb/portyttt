@@ -1,5 +1,39 @@
 /* General Reset */
-* {
+
+*
+/* Sticky Header */
+.header {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    position: sticky; /* Makes the header sticky */
+    top: 0; /* Sticks the header to the top */
+    z-index: 1000; /* Ensures the header stays on top of other content */
+}
+
+.header nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+}
+
+.header nav ul li {
+    margin: 0 20px;
+}
+
+.header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.header nav ul li a:hover {
+    color: #ff6600;
+}
+
+
+{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
