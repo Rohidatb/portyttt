@@ -1,35 +1,70 @@
-/* General Reset */
-
-*
-/* Sticky Header */
+/* Header Section */
 .header {
     background-color: #333;
     color: white;
     padding: 10px 0;
-    position: sticky; /* Makes the header sticky */
-    top: 0; /* Sticks the header to the top */
-    z-index: 1000; /* Ensures the header stays on top of other content */
+    width: 100%; /* Ensure header spans the full width of the screen */
+    box-sizing: border-box; /* Include padding in width calculation */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 .header nav ul {
     list-style-type: none;
-    display: flex;
-    justify-content: center;
+    display: flex; /* Flexbox to make navigation items adjust and align */
+    justify-content: center; /* Center navigation items */
+    align-items: center; /* Align items vertically */
     padding: 0;
+    margin: 0;
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
 }
 
 .header nav ul li {
-    margin: 0 20px;
+    margin: 0 15px; /* Space between navigation items */
 }
 
 .header nav ul li a {
     color: white;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 2vw; /* Make the font size responsive based on viewport width */
+    padding: 5px 10px;
+    display: inline-block;
 }
 
 .header nav ul li a:hover {
-    color: #ff6600;
+    color: #ff6600; /* Highlight color on hover */
+}
+
+/* Media Query for Small Screens (Phones/Tablets) */
+@media screen and (max-width: 600px) {
+    .header nav ul {
+        flex-direction: column; /* Stack the items vertically on small screens */
+        justify-content: flex-start; /* Align items to the top */
+        padding: 10px 0;
+    }
+
+    .header nav ul li {
+        margin: 10px 0; /* More space between items when stacked */
+    }
+
+    .header nav ul li a {
+        font-size: 4vw; /* Increase font size on very small screens */
+    }
+}
+
+/* Media Query for Medium Screens (Tablets) */
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+    .header nav ul li a {
+        font-size: 3vw; /* Adjust font size for tablets */
+    }
+}
+
+/* Media Query for Larger Screens (Desktops) */
+@media screen and (min-width: 1025px) {
+    .header nav ul li a {
+        font-size: 1.5vw; /* Smaller font size for larger screens */
+    }
 }
 
 
